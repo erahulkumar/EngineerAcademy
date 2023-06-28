@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AddMeta";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="content-header">
+    <h2>Add Meta Operation </h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Meta</a></li>
+        <li class="breadcrumb-item"><a>Add Meta</a></li>
+    </ol>
+</div>
+<br />
+<div class="card-footer">
+    <button class="btn btn-primary" onclick="window.location.href='/Admin/Meta/MetaList'" href="/Admin/Meta/MetaList" >Meta List</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class="box box-primary">
+                @using (Html.BeginForm("AddMeta", "Meta", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/MetaForm")
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a142c65e72bf4bdc8bc78987f4d1873b" Name="Diagram1">
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Address" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Ads" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Category" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Comment" Width="1.5" PointX="7.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Contact" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_FavLogoTitle" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Log_Table" Width="1.5" PointX="6" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Meta" Width="1.5" PointX="3" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Post" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_PostImage" Width="1.5" PointX="10.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_PostTag" Width="1.5" PointX="8.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_ProcessType" Width="1.5" PointX="3.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_SocialMedia" Width="1.5" PointX="3" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_User" Width="1.5" PointX="0.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.E_Video" Width="1.5" PointX="3" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENGINEERSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Address_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Ads_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Category_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Post_E_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Comment_E_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Comment_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Contact_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_FavLogoTitle_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Log_Table_E_ProcessType" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Log_Table_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Meta_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Post_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_PostImage_E_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_PostTag_E_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_PostImage_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_PostTag_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_SocialMedia_E_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENGINEERSModel.FK_E_Video_E_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

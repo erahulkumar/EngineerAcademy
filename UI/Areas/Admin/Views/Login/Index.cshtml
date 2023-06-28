@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+@model DTO.UserDTO
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Engineer | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link href="~/Areas/Admin/Content/css/all.min.css" rel="stylesheet" />
+    <!-- icheck bootstrap -->
+    <link href="~/Areas/Admin/Content/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/Areas/Admin/Content/css/adminlte.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a><b>Admin Panel Login</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="Username" placeholder="Username">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Username)
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="Password" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Password)
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+    <script src="https://kit.fontawesome.com/6c7410aff7.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="~/Areas/Admin/Content/js/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Areas/Admin/Content/js/bootstrap.bundle.min.js"></script>
+    <!-- Admin -->
+    <script src="~/Areas/Admin/Content/js/adminlte.min.js"></script>
+
+</body>
+</html>

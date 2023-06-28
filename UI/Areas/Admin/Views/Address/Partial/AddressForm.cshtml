@@ -1,0 +1,32 @@
+﻿@model DTO.AddressDTO
+<div class="box-body">
+    <input type="number" hidden name="ID" value="@Model.ID"/>
+    <div class="form-group">
+        <label>Address Content</label>
+        @Html.TextBoxFor(x => x.AddressContent, new { @class = "form-control", @placeholder = "Address Content" })
+        @Html.ValidationMessageFor(x => x.AddressContent)
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div class="form-group">
+        <label>Mobile No.</label>
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Mobile No.", @type="number" })
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+    <div class="form-group">
+        <label>Large Map</label>
+        @Html.TextAreaFor(x => x.MapPathLarge, new { @class = "form-control", @placeholder = "Large Map" })
+        @Html.ValidationMessageFor(x => x.MapPathLarge)
+    </div>
+    <div class="form-group">
+        <label>Small Map</label>
+        @Html.TextAreaFor(x => x.MapPathSmall, new { @class = "form-control", @placeholder = "Small Map" })
+        @Html.ValidationMessageFor(x => x.MapPathSmall)
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+ </div>

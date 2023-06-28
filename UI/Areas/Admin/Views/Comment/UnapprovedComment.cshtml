@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "UnapprovedComment";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<DTO.CommentDTO>
+
+<div class="content-header">
+    <h2>Unapproved Comment List</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Comment</a></li>
+        <li class="breadcrumb-item"><a>UnApproved Comment List</a></li>
+    </ol>
+</div>
+<br />
+<div class="card-footer">
+    <button class="btn btn-primary" onclick="window.location.href='/Admin/Comment/AllComments'">All Comments</button>
+</div>
+<br />
+<div class="card">
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Post Title</th>
+                    <th>Comment Content</th>
+                    <th>E-mail</th>
+                    <th>Add Date</th>
+                    <th>Approved</th>
+                    <th>Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                <tr id="a_@item.ID">
+                    <td>@item.PostTitle</td>
+
+                    <td>
+                        @item.CommentContent
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                   <td>
+                    @item.AddDate.ToString("dd.MM.yyyy,dddd")
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="/Admin/Comment/ApproveComment/@item.ID">
+                            <br />
+                            <img style="height:16px;width:16px;" src="~/Areas/Admin/Content/icon/approved.png" />
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="#">
+                            <br />
+                            <img style="height:16px;width:16px;" onclick="AskQuestion('/Admin/Comment/DeleteComment/',@item.ID)" src="~/Areas/Admin/Content/icon/delete-icon.png" />
+                        </a>
+                    </td>
+                </tr>
+
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Post Title</th>
+                    <th>Comment Content</th>
+                    <th>E-mail</th>
+                    <th>Add Date</th>
+                    <th>Approved</th>
+                    <th>Reject</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/js/DeleteRecord.js"></script>
+<!-- /.card -->

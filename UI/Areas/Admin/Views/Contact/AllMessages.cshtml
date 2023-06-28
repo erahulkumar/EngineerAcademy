@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "AllMessages";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+@model List<DTO.ContactDTO>
+
+<div class="content-header">
+    <h2>All Messages</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Contact</a></li>
+        <li class="breadcrumb-item"><a>All Messages</a></li>
+    </ol>
+</div>
+<br />
+<div class="card-footer">
+    <button class="btn btn-primary" onclick="window.location.href='/Admin/Contact/UnreadMessages'">Unread Messages</button>
+</div>
+<br />
+<div class="card">
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Message</th>
+                    <th>Add Date</th>
+                    <th>Verify</th>
+                    <th>Read</th>
+                    <th>Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr id="a_@item.ID">
+                        <td>@item.Subject</td>
+
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.Message
+                        </td>
+                        <td>
+                            @item.AddDate.ToString("dd.MM.yyyy,dddd")
+                        </td>
+                        @if(item.isRead)
+                        {
+                            <td align="center" valign="middle">
+                                <a href="/Admin/Contact/ReadMessage2/@item.ID">
+                                    <br />
+                                    <img style="height:20px;width:20px;" src="~/Areas/Admin/Content/icon/read.png" />
+                                </a>
+                            </td>
+                         }
+                        else
+                        {
+                            <td>Unread</td>
+                        }
+                        <td align="center" valign="middle">
+                            <a href="/Admin/Contact/ReadMessage/@item.ID">
+                                <br />
+                                <img style="height:20px;width:20px;" src="~/Areas/Admin/Content/icon/read.png" />
+                            </a>
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <br />
+                                <img style="height:16px;width:16px;" onclick="AskQuestion('/Admin/Contact/DeleteMessage/',@item.ID)" src="~/Areas/Admin/Content/icon/delete-icon.png" />
+                            </a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Subject</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Message</th>
+                    <th>Add Date</th>
+                    <th>Verify</th>
+                    <th>Read</th>
+                    <th>Reject</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<script src="~/Areas/Admin/Content/js/DeleteRecord.js"></script>
+<!-- /.card -->
